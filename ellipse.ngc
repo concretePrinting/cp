@@ -1,0 +1,25 @@
+M109 P210.000000
+;makerstorage Start.gcode for cura
+G21        ;metric values
+G90        ;absolute positioning
+G28 X0 Y0  ;move X/Y to min endstops
+G28 Z0     ;move Z to min endstops
+
+;Layer count: 1
+;LAYER:0
+M106 P0
+;LAYER:1
+M106 P255
+G0 F9000 X330.0 Y473.0 Z0.0
+;Counter-clockwise
+G3 X505.0 Y648.0 I175 F1620
+G3 X330.0 Y823.0 I175
+G3 X155.0 Y648.0 I175
+G3 X330.0 Y473.0 I175
+
+;makerstorage End GCode
+G91                         ;relative positioning
+G1 Z+0.5 F9000    	        ;move Z up a bit
+G28 X0 Y0                   ;home x/y
+M84                         ;steppers off
+G90                         ;absolute positioning
