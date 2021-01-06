@@ -1,55 +1,50 @@
-;500x500 Square
+;500x500 Square, 5 Layers
 ;Machine (Parameters) Initial
 M48         ;enable the speed & feed override, M49 to disable
-G21        ;use millimetres for length units, G20 to use inches
-G90        ;set absolute distance mode, G91 to set incremental distance mode
-G28 X0 Y0  ;go home
-G28 Z0     ;move Z to min endstops
-
-;Layer count: 5
+G21         ;use millimetres for length units, G20 to use inches
+G90         ;set absolute distance mode, G91 to set incremental distance mode
+G28         ;go home
 
 ;LAYER:0
-G0 X155.0 Y473.0 Z24.0 F9000
+G0 X155.0 Y473.0 Z30.0 F9000
 G4 P3                       ;dwell 3 second before start to print
 
 ;LAYER:1
-G1 X655.0 Y473.0 F2100      ;X155.0->655.0
+G1 X655.0 Y473.0 F2600      ;X155.0->655.0
 G1 X655.0 Y973.0            ;Y473.0->973.0
 G1 X155.0 Y973.0            ;X655.0->155.0
 G1 X155.0 Y473.0            ;Y973.0->473.0
 
 ;LAYER:2
-G0 Z44.00
+G0 Z60.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
 ;LAYER:3
-G0 Z64.00
+G0 Z90.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
 ;LAYER:4
-G0 Z84.00
+G0 Z120.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
 ;LAYER:5
-G0 Z104.00
+G0 Z150.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
-;makerstorage End GCode
-G91                         ;relative positioning
-G0 Z+20                     ;move Z up a bit
-G28 X0 Y0                   ;home x/y
-G28 Z0
-M84                         ;steppers off
-G90                         ;absolute positioning
+;End
+G91
+G0 Z+20
+G28
+G90
