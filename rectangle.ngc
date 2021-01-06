@@ -1,57 +1,55 @@
-; 500x500 Square
-M109 P210.000000
-;makerstorage Start.gcode for cura
-G21        ;metric values
-G90        ;absolute positioning
-G28 X0 Y0  ;move X/Y to min endstops
+;500x500 Square
+;Machine (Parameters) Initial
+M48         ;enable the speed & feed override, M49 to disable
+G21        ;use millimetres for length units, G20 to use inches
+G90        ;set absolute distance mode, G91 to set incremental distance mode
+G28 X0 Y0  ;go home
 G28 Z0     ;move Z to min endstops
 
 ;Layer count: 5
 
 ;LAYER:0
-M106 P0
-G0 F9000 X155.0 Y473.0
+G0 X155.0 Y473.0 Z24.0 F9000
+G4 P3                       ;dwell 3 second before start to print
+
 ;LAYER:1
-M106 P255
-G1 Z24.00
-G1 X655.0 Y473.0 F2100
-G1 X655.0 Y973.0
-G1 X155.0 Y973.0
-G1 X155.0 Y473.0
+G1 X655.0 Y473.0 F2100      ;X155.0->655.0
+G1 X655.0 Y973.0            ;Y473.0->973.0
+G1 X155.0 Y973.0            ;X655.0->155.0
+G1 X155.0 Y473.0            ;Y973.0->473.0
 
 ;LAYER:2
-G1 Z44.00
+G0 Z44.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
 ;LAYER:3
-G1 Z64.00
+G0 Z64.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
 ;LAYER:4
-G1 Z84.00
+G0 Z84.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
 ;LAYER:5
-G1 Z104.00
+G0 Z104.00
 G1 X655.0 Y473.0
 G1 X655.0 Y973.0
 G1 X155.0 Y973.0
 G1 X155.0 Y473.0
 
-M106 P0
-G0 F9000 X155.991 Y473.0 Z155.000
 ;makerstorage End GCode
 G91                         ;relative positioning
-G1 Z+0.5 F9000    	    ;move Z up a bit
+G0 Z+20                     ;move Z up a bit
 G28 X0 Y0                   ;home x/y
+G28 Z0
 M84                         ;steppers off
 G90                         ;absolute positioning
