@@ -5,3 +5,6 @@
     - Flying Ash
 - [x] Discuss that one more new Teammate needed? (i.e. total 5個) **要**
 - [ ] 目標一日四次Trials (Each time 1 variable ONLY)
+- [ ] Test the G1 Feed Rate
+- [ ] Find out the suitable **Feed Rate** to pump the concrete out
+- [ ] Find out that how Z affect the shape of concrete getting pumped out
