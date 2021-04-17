@@ -1,0 +1,23 @@
+;START
+G21        			            ;metric values (mm) / G20 to inches
+G90        			            ;absolute positioning / G91 to relative positioning
+G28 X0 Y0  			            ;move X/Y to Home
+G28 Z0     			            ;move Z to Home
+
+;Layer count: 1
+;Preparation
+G0 F9000 X400.0 Y400.0 Z0.0	    ;starting point
+G4 P2				            ;wait 2 second
+
+;Layer: 1 (trial 1)
+;G2 X400 Y1200 I300 J400		;G2 clockwise, G3 anti-clockwise
+;G2 X400 Y400 I-300 J-400	    ;I&J are relative position to the previous point
+
+G2 X400 Y1266 I250 J433
+G2 X400 Y400 I-250 J-433
+
+;END
+G91                         	;relative positioning
+G1 Z+0.5 F9000			        ;move Z up a bit
+G28 X0 Y0                   	;home x/y
+G90                         	;absolute positioning
